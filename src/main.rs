@@ -16,9 +16,23 @@ struct Opts {
 
 #[derive(StructOpt)]
 enum Command {
+    CreateAccount(CreateAccountCommand),
+}
+
+#[derive(StructOpt)]
+struct CreateAccountCommand {
 }
 
 fn main() -> Result<()> {
     let opts = Opts::from_args();
+
+    match opts.command {
+        Command::CreateAccount(cmd) => {
+            create_account(cmd)
+        }
+    }
+}
+
+fn create_account(cmd: CreateAccountCommand) -> Result<()> {
     panic!()
 }
