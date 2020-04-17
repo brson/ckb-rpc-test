@@ -453,6 +453,8 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "ckb-sdk",
+ "ckb-types",
+ "failure",
  "structopt",
 ]
 
@@ -487,6 +489,7 @@ dependencies = [
 [[package]]
 name = "ckb-sdk"
 version = "0.30.0"
+source = "git+https://github.com/nervosnetwork/ckb-cli?tag=v0.30.0#2a7ed95645316ce034560b494caef7a6478c4cbf"
 dependencies = [
  "aes-ctr",
  "bech32",
@@ -520,6 +523,7 @@ dependencies = [
 [[package]]
 name = "ckb-sdk-types"
 version = "0.30.0"
+source = "git+https://github.com/nervosnetwork/ckb-cli?tag=v0.30.0#2a7ed95645316ce034560b494caef7a6478c4cbf"
 dependencies = [
  "ckb-error",
  "ckb-hash",

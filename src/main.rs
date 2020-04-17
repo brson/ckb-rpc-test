@@ -48,6 +48,14 @@ fn main() -> Result<()> {
 }
 
 fn create_account(opts: GlobalOpts, cmd: CreateAccountCommand) -> Result<()> {
-    let _ = Account::create(&opts, &cmd.name);
+    let account = Account::create(&opts, &cmd.name)?;
+
+    println!("account created");
+    println!("name: {}", account.name);
+    println!("lock_arg: {}", account.lock_arg_string());
+    println!("lock_hash: {}", account.lock_hash_string());
+    println!("mainnet address: {}", account.mainnet_address_string());
+    println!("testnet address: {}", account.testnet_address_string());
+
     Ok(())
 }
