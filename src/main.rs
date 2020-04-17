@@ -8,6 +8,10 @@
 use structopt::StructOpt;
 use anyhow::Result;
 
+mod account;
+
+use crate::account::{Account, AccountName};
+
 #[derive(StructOpt)]
 struct Opts {
     #[structopt(subcommand)]
@@ -21,6 +25,7 @@ enum Command {
 
 #[derive(StructOpt)]
 struct CreateAccountCommand {
+    name: AccountName,
 }
 
 fn main() -> Result<()> {
@@ -34,5 +39,6 @@ fn main() -> Result<()> {
 }
 
 fn create_account(cmd: CreateAccountCommand) -> Result<()> {
-    panic!()
+    let _ = Account::create(&cmd.name);
+    Ok(())
 }
