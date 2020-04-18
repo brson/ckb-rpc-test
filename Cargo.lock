@@ -455,6 +455,8 @@ dependencies = [
  "ckb-sdk",
  "ckb-types",
  "failure",
+ "serde",
+ "serde_json",
  "structopt",
 ]
 

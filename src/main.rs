@@ -34,7 +34,7 @@ struct CreateAccountCommand {
 #[derive(StructOpt)]
 pub struct GlobalOpts {
     #[structopt(default_value = "./data/")]
-    data_path: PathBuf,
+    data_dir: PathBuf,
 }
 
 fn main() -> Result<()> {
